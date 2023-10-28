@@ -1,7 +1,6 @@
 import { key } from "./key";
 
 let tabIndex = 0;
-const tabs = [];
 // form
 const form = document.querySelector("form");
 const input = document.querySelector("input");
@@ -35,15 +34,12 @@ const populateCurrent = (forecast, city) => {
   const temps = document.createElement("div");
   temps.innerHTML = `<span class="temp_c">${forecast.current["temp_c"]}°C</span> <span class="condition-text">${forecast.current.condition.text}</span>`;
   container.append(location, temps);
-  const main = document.querySelector("main");
   invisible.append(container);
-  tabs.push(container);
   const li = document.createElement("li");
   li.setAttribute("data-tab", tabIndex);
   li.textContent = city;
   const ul = document.querySelector("ul");
   ul.append(li);
-  console.log(tabs);
   addEvents();
   tabIndex += 1;
 
