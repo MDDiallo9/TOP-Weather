@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 :root{
-    --navy : #0E2954;
-    --blue : #1F6E8C;
+    --navy : #00111c;
+    --blue : #001a2c;
     --teal : #2E8A99;
     --gray : #84A7A1;
 }
@@ -10,6 +10,7 @@
     border: 0;
     box-sizing: border-box;
     font-family: "Raleway";
+    color: white;
 }
 ul{
     list-style: none;
