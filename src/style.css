@@ -13,6 +13,9 @@
   font-family: "Raleway";
   color: white;
 }
+img {
+  width: 100%;
+}
 ul {
   list-style: none;
 }
@@ -30,7 +33,7 @@ body {
 }
 main {
   display: grid;
-  grid-template-columns: max(60vw) 1fr;
+  grid-template-columns: max(55vw) 1fr;
   grid-template-rows: 50px repeat(3, 1fr);
   gap: 1rem;
   font-size: 1rem;
@@ -42,11 +45,11 @@ section {
 nav {
   height: 100%;
   background-color: var(--blue);
-  width: 240px;
+  width: 150px;
   border-radius: 15px;
 }
-h2{
-    margin: 1rem 0;
+h2 {
+  margin: 1rem 0;
 }
 /* GRID */
 
@@ -68,8 +71,15 @@ form {
 #city {
   grid-column: 1/2;
   grid-row: 2/3;
-  background-color: var(--blue);
-  border-radius: var(--radius);
+  /* background-color: var(--blue);
+  border-radius: var(--radius); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  & h3{
+    font-size: 2rem;
+  }
 }
 #todaysforecast {
   grid-column: 1/2;
@@ -92,6 +102,7 @@ form {
   & .hour {
     border-right: #2e8a99 1px solid;
     margin: 1rem 0;
+    padding-right: 6px;
   }
 }
 #details {
@@ -106,7 +117,27 @@ form {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
-#weekly-forecast{
-    grid-column: 2/3;
-    grid-row: 2/-1;
+#weekly-forecast {
+  grid-column: 2/3;
+  grid-row: 2/-1;
+  background-color: var(--blue);
+  border-radius: var(--radius);
+  padding: 2rem;
+  & ul {
+    padding: 0;
+  }
+  & li {
+    display: flex;
+    justify-content: space-between;
+  }
+  & .miniweek {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  & p {
+    text-transform: capitalize;
+  }
 }

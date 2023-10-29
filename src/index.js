@@ -36,12 +36,14 @@ const populateCurrent = (forecast, city) => {
   citye.innerHTML = `
   <div>
     <div>
-        <p>${forecast.location.name}</p>
+        <h3>${forecast.location.name}</h3>
         <p>${forecast.current.condition.text}</p>
     </div>
-    <p>${forecast.current["temp_c"]}</p>
+    <p>${forecast.current["temp_c"]}°C</p>
   </div>
-  <div></div>
+  <div>
+  <img src="${forecast.current.condition.icon.replaceAll("64","128")}" alt=""></img>
+  </div>
   `;
   // Today's forecast element
   const todaysForecast = document.createElement("div");
@@ -94,7 +96,7 @@ const populateCurrent = (forecast, city) => {
   for (let day of forecast.forecast.forecastday){
     console.log(day)
     const li = document.createElement('li');
-    li.innerHTML = `<p>${/* day.date */format(new Date(day.date),"eeee",{locale: fr})}</p><div>${day.day.condition.text}<div><img src="${day.day.condition.icon}" alt=""></img></div></div><div>${day.day.mintemp_c}/${day.day.maxtemp_c}</div>/`
+    li.innerHTML = `<p>${format(new Date(day.date),"eeee",{locale: fr})}</p><div class="miniweek">${day.day.condition.text}<div><img src="${day.day.condition.icon}" alt=""></img></div></div><div>${day.day.mintemp_c}/${day.day.maxtemp_c}</div>`
     weeklist.append(li)
   }
   weeklyForecast.append(weeklist)
