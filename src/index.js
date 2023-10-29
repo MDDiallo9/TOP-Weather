@@ -81,16 +81,16 @@ const populateCurrent = (forecast, mode ) => {
   const detailsContainer = document.createElement("div");
   detailsContainer.id = "details-container";
   detailsContainer.innerHTML += `<div>
-      <p>Ressenti</p> <br> <p class="value">${forecast.current.feelslike_c}°C</p>
+  <i class="fa-solid fa-temperature-half"></i> <p>Ressenti</p> <br> <p class="value">${forecast.current.feelslike_c}°C</p>
   </div>`;
   detailsContainer.innerHTML += `<div>
-      <p>Vent</p> <br> <p class="value">${forecast.current.wind_kph} km/h</p>
+  <i class="fa-solid fa-wind"></i> <p>Vent</p> <br> <p class="value">${forecast.current.wind_kph} km/h</p>
   </div>`;
   detailsContainer.innerHTML += `<div>
-      <p>Pluie</p> <br> <p class="value">${forecast.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
+  <i class="fa-solid fa-umbrella"></i> <p>Pluie</p> <br> <p class="value">${forecast.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
   </div>`;
   detailsContainer.innerHTML += `<div>
-      <p>Humidité</p> <br> <p class="value">${forecast.current.humidity}%</p>
+  <i class="fa-solid fa-droplet"></i> <p>Humidité</p> <br> <p class="value">${forecast.current.humidity}%</p>
   </div>`;
   details.append(detailsContainer);
   // Weekly forecast
@@ -145,3 +145,5 @@ const cleanMain = () => {
     main.removeChild(element);
   }
 };
+
+request(key, "Paris","first");
