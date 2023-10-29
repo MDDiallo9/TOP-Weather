@@ -67,18 +67,32 @@ const populateCurrent = (forecast, city) => {
   const details = document.createElement('div');
   details.id = "details"
   details.setAttribute("data-tab",tabIndex)
-  details.innerHTML += `<div>
+  details.innerHTML = "<h2>Détails</h2>"
+  const detailsContainer = document.createElement('div');
+  detailsContainer.id = "details-container"
+  detailsContainer.innerHTML += `<div>
       <p>Ressenti</p> <br> <p class="value">${forecast.current.feelslike_c}°C</p>
   </div>`
-  details.innerHTML += `<div>
+  detailsContainer.innerHTML += `<div>
       <p>Vent</p> <br> <p class="value">${forecast.current.wind_kph} km/h</p>
   </div>`
-  details.innerHTML += `<div>
+  detailsContainer.innerHTML += `<div>
       <p>Pluie</p> <br> <p class="value">${forecast.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
   </div>`
-  details.innerHTML += `<div>
+  detailsContainer.innerHTML += `<div>
       <p>Humidité</p> <br> <p class="value">${forecast.current.humidity}%</p>
   </div>`
+  details.append(detailsContainer)
+  // Weekly forecast
+  const weeklyForecast = document.createElement('div');
+  weeklyForecast.innerHTML = `<h2>Cette semaine</h2>`
+  const weeklist = document.createElement('ul');
+  weeklyForecast.id = "weekly-forecast"
+  weeklyForecast.setAttribute("data-tab",tabIndex)
+  for (let day of forecast.forecast.forecastday){
+    console.log(day)
+  }
+
   /* location.innerHTML = `<span class="city">${forecast.location.name}</span>, <span class="region">${forecast.location.region}</span>, <span class="country">${forecast.location.country}</span>`;
   const temps = document.createElement("div");
   temps.innerHTML = `<span class="temp_c">${forecast.current["temp_c"]}°C</span> <span class="condition-text">${forecast.current.condition.text}</span>`; */
