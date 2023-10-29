@@ -8,6 +8,7 @@
 }
 * {
   margin: 0;
+  padding: 0;
   border: 0;
   box-sizing: border-box;
   font-family: "Raleway";
@@ -139,5 +140,20 @@ form {
   }
   & p {
     text-transform: capitalize;
+    min-width: 76px;
   }
+}
+
+/* NAV */
+
+#nav-ul{
+
+    & li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        cursor: pointer;
+        border-bottom: solid 1px var(--gray);
+    }
 }
