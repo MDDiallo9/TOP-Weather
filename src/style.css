@@ -31,7 +31,7 @@ body {
 main {
   display: grid;
   grid-template-columns: max(60vw) 1fr;
-  grid-template-rows: 50px repeat(3,1fr);
+  grid-template-rows: 50px repeat(3, 1fr);
   gap: 1rem;
   font-size: 1rem;
 }
@@ -45,50 +45,68 @@ nav {
   width: 240px;
   border-radius: 15px;
 }
-
+h2{
+    margin: 1rem 0;
+}
 /* GRID */
 
-form{
-    grid-column: 1/2;
-    grid-row: 1/2;
-    & input[type="submit"]{
-        display: none;
-    }
-    & input[type="text"]{
-        width: 100%;
-        height: 100%;
-        border-radius: var(--radius);
-        background-color: var(--blue);
-        color: white;
-    }
+form {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  & input[type="submit"] {
+    display: none;
+  }
+  & input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    background-color: var(--blue);
+    color: white;
+  }
 }
 
-#city{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    background-color: var(--blue);
-    border-radius: var(--radius);
+#city {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: var(--blue);
+  border-radius: var(--radius);
 }
-#todaysforecast{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    background-color: var(--blue);
-    border-radius: var(--radius);
+#todaysforecast {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-color: var(--blue);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  & #hourdiv {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 2rem;
-    & #hourdiv{
-        display: flex;
-        gap: 1rem;
-        overflow-x: scroll;
-        width: 100%;
-    }
-    & #hourdiv::-webkit-scrollbar {
-        display: none;
-      }
-    & .hour{
-        border-right: #2e8a99 1px solid;
-        margin: 1rem 0;
-    }
+    gap: 1rem;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  & #hourdiv::-webkit-scrollbar {
+    display: none;
+  }
+  & .hour {
+    border-right: #2e8a99 1px solid;
+    margin: 1rem 0;
+  }
+}
+#details {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background-color: var(--blue);
+  border-radius: var(--radius);
+  padding: 0 2rem;
+}
+#details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+#weekly-forecast{
+    grid-column: 2/3;
+    grid-row: 2/-1;
 }
