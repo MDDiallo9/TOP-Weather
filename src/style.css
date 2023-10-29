@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 :root {
   --navy: #00111c;
-  --blue: #001523;
+  --blue: #003356;
   --teal: #2e8a99;
   --gray: #84a7a1;
   --radius: 15px;
@@ -36,7 +36,7 @@ main {
   display: grid;
   grid-template-columns: max(55vw) 1fr;
   grid-template-rows: 50px repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   font-size: 1rem;
 }
 main,
@@ -66,6 +66,8 @@ form {
     border-radius: var(--radius);
     background-color: var(--blue);
     color: white;
+    padding: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -78,7 +80,7 @@ form {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  & h3{
+  & h3 {
     font-size: 2rem;
   }
 }
@@ -117,6 +119,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 1rem;
 }
 #weekly-forecast {
   grid-column: 2/3;
@@ -146,14 +149,13 @@ form {
 
 /* NAV */
 
-#nav-ul{
-
-    & li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100px;
-        cursor: pointer;
-        border-bottom: solid 1px var(--gray);
-    }
+#nav-ul {
+  & li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    cursor: pointer;
+    border-bottom: solid 1px var(--gray);
+  }
 }
