@@ -91,7 +91,11 @@ const populateCurrent = (forecast, city) => {
   weeklyForecast.setAttribute("data-tab",tabIndex)
   for (let day of forecast.forecast.forecastday){
     console.log(day)
+    const li = document.createElement('li');
+    li.innerHTML = `<p>${day.date}</p><div>${day.day.condition.text}<div><img src="${day.day.condition.icon}" alt=""></img></div></div><div>${day.day.mintemp_c}/${day.day.maxtemp_c}</div>/`
+    weeklist.append(li)
   }
+  weeklyForecast.append(weeklist)
 
   /* location.innerHTML = `<span class="city">${forecast.location.name}</span>, <span class="region">${forecast.location.region}</span>, <span class="country">${forecast.location.country}</span>`;
   const temps = document.createElement("div");
@@ -106,6 +110,7 @@ const populateCurrent = (forecast, city) => {
   main.append(citye);
   main.append(todaysForecast)
   main.append(details)
+  main.append(weeklyForecast)
   addEvents();
   tabIndex += 1;
 };
