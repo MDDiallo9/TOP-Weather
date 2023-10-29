@@ -13,6 +13,7 @@ const main = document.querySelector("main");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   request(key, input.value,"first");
+  form.reset()
 });
 
 const request = async (key, city,mode) => {
