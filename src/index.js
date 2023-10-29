@@ -1,4 +1,6 @@
 import { key } from "./key";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
 
 let tabIndex = 0;
 // form
@@ -92,7 +94,7 @@ const populateCurrent = (forecast, city) => {
   for (let day of forecast.forecast.forecastday){
     console.log(day)
     const li = document.createElement('li');
-    li.innerHTML = `<p>${day.date}</p><div>${day.day.condition.text}<div><img src="${day.day.condition.icon}" alt=""></img></div></div><div>${day.day.mintemp_c}/${day.day.maxtemp_c}</div>/`
+    li.innerHTML = `<p>${/* day.date */format(new Date(day.date),"eeee",{locale: fr})}</p><div>${day.day.condition.text}<div><img src="${day.day.condition.icon}" alt=""></img></div></div><div>${day.day.mintemp_c}/${day.day.maxtemp_c}</div>/`
     weeklist.append(li)
   }
   weeklyForecast.append(weeklist)
